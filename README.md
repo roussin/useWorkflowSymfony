@@ -183,10 +183,19 @@ symfony console make:controller ToyRequestController
 ---
 
 ### Mettre en place les notifications par email via MailCatcher 
-
-*src/EventSubscriber/workflowSubscriber.php*
+*src/EventSubscriber/WorkflowSubscriber.php*
 
 - Lorsqu'il y a une demande de validation (mail au parents)) 
-- lorsque la demande à été approuvé par les parents (mail à l'enfant)
+- lorsque la demande à été approuvé par les parents (mail du père noël à l'enfant)
 - **MailCatcher** est une image docker (voir docker-compose.yaml)
-- Utilisation des evenements (Using Event) de Wokflow* 
+- Utilisation des evenements (Using Event) de Wokflow 
+
+- Création dans le dossier *scrc* d'un dossier *EventSubscriber* et à l'intérieur de celui-ci d'un fichier *workflowSubscriber.php* 
+
+### TODO
+*src/EventSubscriber/workflowSubscriber.php*
+- Charger les adresse mail des parents automatiquement
+- Envoyer par email à l'enfant une belle lettre du père noël 
+- Créer sur la page principale un lien pour s'enregistrer ou se connecter
+- afficher sur la page de l'enfants un tableau avec tous ces jouets commandés et le status de ceux-ci (en attente de validation de papa ou de maman ou des deux | acceptés par papa ou maman | rejetés par papa ou maman) 
+- envoyer un mail à l'autre parent pour l'informer de ce qu'il à fait

@@ -33,8 +33,8 @@ class ToyRequestController extends AbstractController
         $form = $this->createForm(ToyRequestType::class, $toy);
 
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
+
 
             $toy = $form->getData();
 

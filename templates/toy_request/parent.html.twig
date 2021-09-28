@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}ToyRequest - Validation des cadeaux{% endblock %}
-
 {% block body %}
     {% for label, messages in app.flashes(['success']) %}
         {% for message in messages %}
@@ -20,13 +18,13 @@
                 <a type="button" class="btn btn-primary btn-sm" href="{{ path('app_change', {'id': toy.id, 'to': 'to_mum_ok'}) }}">Maman Valide</a>
             {% endif %}
             {% if workflow_can(toy, 'to_order') %}
-                <a type="button" class="btn btn-primary btn-sm" href="{{ path('app_change', {'id': toy.id, 'to': 'to_order'}) }}">La commande à été envoyé au père noël</a>
+                <a type="button" class="btn btn-primary btn-sm" href="{{ path('app_change', {'id': toy.id, 'to': 'to_order'}) }}">Envoyer la lettre au Père Noël</a>
             {% endif %}
             {% if workflow_can(toy, 'to_ordered') %}
-                <a type="button" class="btn btn-primary btn-sm" href="{{ path('app_change', {'id': toy.id, 'to': 'to_ordered'}) }}">La commande a été validé par le père noël</a>
+                <a type="button" class="btn btn-primary btn-sm" href="{{ path('app_change', {'id': toy.id, 'to': 'to_ordered'}) }}">Papa ou maman noël Valide</a>
             {% endif %}
             {% if workflow_can(toy, 'to_received') %}
-                <a type="button" class="btn btn-primary btn-sm" href="{{ path('app_change', {'id': toy.id, 'to': 'to_received'}) }}">La commande sera bientôt sous le sapin</a>
+                <a type="button" class="btn btn-primary btn-sm" href="{{ path('app_change', {'id': toy.id, 'to': 'to_received'}) }}">Réception des cadeaux prévu pour Noël</a>
             {% endif %}
             <br>
         {% endfor %}

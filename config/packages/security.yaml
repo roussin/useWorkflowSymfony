@@ -44,5 +44,3 @@ security:
         # Only Parent authorised
         - { path: ^/parent, roles: ROLE_PARENT }
         - { path: ^/change, roles: ROLE_PARENT }
-        # Only Santa Claus authorised
-        # - { path: ^/santaclaus, roles: ROLE_SANTACLAUS }
