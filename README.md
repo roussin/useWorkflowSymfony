@@ -85,7 +85,6 @@ symfony console  make:registration-form
 > [valeur defaut]
 > no
 > [valeur defaut]
-> 11
 ``` 
 ---
 

@@ -10,6 +10,10 @@ security:
             entity:
                 class: App\Entity\User
                 property: email
+    # Role hierarchy for the parents 
+    role_hierarchy:
+        ROLE_DAD: [ROLE_PARENT]
+        ROLE_MUM: [ROLE_PARENT]
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -17,6 +21,13 @@ security:
         main:
             anonymous: lazy
             provider: app_user_provider
+            guard:
+                authenticators:
+                    - App\Security\AppAuthenticator
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                # target: app_any_route
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
