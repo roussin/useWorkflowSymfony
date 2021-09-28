@@ -129,24 +129,27 @@ ManyToOne   Each ToyRequest relates to (has) one User.
 > ManyToOne 
 > [valeur defaut]
 > [valeur defaut]
+> [valeur defaut]
 > name
 > [valeur defaut]
 > [valeur defaut]
 > [valeur defaut]
 > status [le status de la demande qui évoluera dans le workflow ]
 > array [plusieurs status en parallèle car plusieurs demande de validation à gérer]
+> [valeur defaut]
+> [valeur defaut] = sortie
 ```
 
 - Migration de l'entitée 
 
 ```bash
-php bin/console make:migration
+symfony console make:migration
 ```
 
 - Appliquer la migration
 
 ```bash
-php bin/console d:m:m ( ou symfony console d:m:m)
+symfony console d:m:m
 ```
 ---
 
@@ -157,7 +160,7 @@ composer require symfony/workflow
 ```
 
 - configuration du workflow *config/packages/workflow.yaml*
-- créer une représentation graphique du workflow
+- générer (à la racine du projet) une représentation graphique du workflow au format png avec [Graphviz](https://symfony.com/doc/current/workflow/dumping-workflows.html)
 
 ```bash
 php bin/console workflow:dump toy_request | dot -Tpng -o graph.png

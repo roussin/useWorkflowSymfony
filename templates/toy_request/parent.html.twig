@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ToyRequest - Validation des cadeaux{% endblock %}
+
+{% block body %}
+    {% for label, messages in app.flashes(['success']) %}
+        {% for message in messages %}
+            <div class="flash-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+    <section class="py-5 container-lg bg-light shadow rounded">
+        {% for toy in toys %}
+            <p class="h2">{{ toy.name }}<span class="lead"><em> : Demande de {{ toy.user.email }}</em></span></p>
+            {% if workflow_can(toy, 'to_dad_ok') %}
+                <a type="button" class="btn btn-primary btn-sm" href="{{ path('app_change', {'id': toy.id, 'to': 'to_dad_ok'}) }}">Papa Valide</a>
+            {% endif %}
+            {% if workflow_can(toy, 'to_mum_ok') %}
+                <a type="button" class="btn btn-primary btn-sm" href="{{ path('app_change', {'id': toy.id, 'to': 'to_mum_ok'}) }}">Maman Valide</a>
+            {% endif %}
+            {% if workflow_can(toy, 'to_order') %}
+                <a type="button" class="btn btn-primary btn-sm" href="{{ path('app_change', {'id': toy.id, 'to': 'to_order'}) }}">La commande à été envoyé au père noël</a>
+            {% endif %}
+            {% if workflow_can(toy, 'to_ordered') %}
+                <a type="button" class="btn btn-primary btn-sm" href="{{ path('app_change', {'id': toy.id, 'to': 'to_ordered'}) }}">La commande a été validé par le père noël</a>
+            {% endif %}
+            {% if workflow_can(toy, 'to_received') %}
+                <a type="button" class="btn btn-primary btn-sm" href="{{ path('app_change', {'id': toy.id, 'to': 'to_received'}) }}">La commande sera bientôt sous le sapin</a>
+            {% endif %}
+            <br>
+        {% endfor %}
+    </section>
+{% endblock %}
