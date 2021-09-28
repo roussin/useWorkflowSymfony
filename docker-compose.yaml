@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+    mailer:
+      # catcher mail
+      image: schickling/mailcatcher
+      # 1025 catch mail
+      # 1080 send to interface mail
+      ports: [1025, 1080]

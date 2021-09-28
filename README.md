@@ -29,7 +29,7 @@ DATABASE_URL="sqlite:///%kernel.project_dir%/var/data.db"
 / --
 ```
 
-- Création de la base de donnée
+- Création de la base de donnée sqlite dans le fichier var/data.db
 
 > raccourci pour doctrine:database:create
 
