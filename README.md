@@ -96,7 +96,7 @@ symfony console  make:registration-form
 ```php
 twig:
   / --
-  form_themes: ['bootstrap_5_layout.html.twig']
+  form_themes: ['bootstrap_4_layout.html.twig']
 ```
 ---
 
