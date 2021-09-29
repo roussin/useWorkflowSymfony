@@ -17,8 +17,6 @@ class WorkflowSubscriber implements EventSubscriberInterface
 
     public function newToyRequest(Event $event)
     {
-        var_dump($event);
-
         $email = (new Email())
             ->from($event->getSubject()->getUser()->getEmail())
             ->to('dad@test.fr')
@@ -31,8 +29,6 @@ class WorkflowSubscriber implements EventSubscriberInterface
 
     public function dadToyValidate(Event $event)
     {
-        var_dump($event);
-
         $email = (new Email())
             ->from('dad@test.fr')
             ->to('mum@test.fr')

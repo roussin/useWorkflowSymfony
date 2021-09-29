@@ -10,6 +10,11 @@ Création d'une application web qui va permettre à un enfant de demander un cad
     /kid (pour formuler la demande)
     /parents (pour faire avancer la demande)
 
+### Créer les 3 utilisateurs avec ces adresses email (password à votre convenance) :
+- dad@test.fr
+- mum@test.fr
+- kid@test.fr
+
 # Les différents étapes mise en place lors de l'élaboration du projet
 
 ### Création du projet ToyReqest (avec le binaire symfony) et toutes les dépendances (--full) [symfony Releases Calendar](https://symfony.com/releases)
@@ -198,4 +203,5 @@ symfony console make:controller ToyRequestController
 - Envoyer par email à l'enfant une belle lettre du père noël 
 - Créer sur la page principale un lien pour s'enregistrer ou se connecter
 - afficher sur la page de l'enfants un tableau avec tous ces jouets commandés et le status de ceux-ci (en attente de validation de papa ou de maman ou des deux | acceptés par papa ou maman | rejetés par papa ou maman) 
-- envoyer un mail à l'autre parent pour l'informer de ce qu'il à fait
+- envoyer un mail à l'autre parent pour l'informer de ce qu'il à fait (ok)
+- créer une nouvelle entité pour récupérer la liste de noël ou créer un fichier JSON
